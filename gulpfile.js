@@ -33,6 +33,12 @@ gulp.task('components', function() {
   return gulp.src('bower_components/**/**/*')
     .pipe(gulp.dest('dist/components'));
 });
+//Components
+gulp.task('images', function() {
+  // Get components and put it in the dist folder
+  return gulp.src('app/assets/img/*')
+    .pipe(gulp.dest('dist/assets/img'));
+});
 //server
 gulp.task('webserver', function() {
   connect.server({
@@ -70,5 +76,5 @@ gulp.task('scripts', function() {
 //run
 gulp.task('default', ['clean-folder'], function() {
   //start tasks
-  gulp.start(['components', 'views', 'style', 'scripts', 'webserver', 'watch']);
+  gulp.start(['components', 'views', 'style', 'scripts', 'images', 'webserver', 'watch']);
 });
