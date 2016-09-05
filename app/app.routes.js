@@ -21,8 +21,4 @@ angular.module('rokk3rlabsApp')
           url: '/',
           templateUrl: './views/dashboard/dashboardView.html'
       })
-      .state('404', {
-          url: '/404',
-          templateUrl: './views/not_found/404.html'
-      })
 }]);
