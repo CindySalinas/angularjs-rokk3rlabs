@@ -17,12 +17,18 @@ angular.module('rokk3rlabsApp')
         abstract: true,
         templateUrl: "./views/home/homeView.html",
       })
-      .state('app.home', {
+      .state('app.dashboard', {
           url: '/',
-          templateUrl: './views/dashboard/dashboardView.html'
+          templateUrl: './views/dashboard/dashboardView.html',
+          controller: "DashboardCtrl"
       })
       .state('app.news', {
           url: '/news',
-          templateUrl: './views/news/newsView.html'
+          templateUrl: './views/news/newsView.html'/*,
+          controller: "homeController"*/
+      })
+      .state('404', {
+          url: '/404',
+          templateUrl: './views/not_found/404.html'
       })
 }]);
