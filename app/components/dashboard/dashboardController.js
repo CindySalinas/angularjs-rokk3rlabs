@@ -21,12 +21,10 @@ angular.module('app.dashboard', [])
           $scope.labels.push(data.zoneId);
           //values
           $scope.values.push(data.data.speed);
-          $scope.valuesCount.push(data.data.count);
-          $scope.valuesAverage.push(data.data.speed/data.data.count);
+          $scope.dataCount.push(data.data.count);
+          $scope.dataAverage.push(data.data.speed/data.data.count);
         });
         $scope.dataSpeed.push($scope.values);
-        $scope.dataCount.push($scope.valuesCount);
-        $scope.dataAverage.push($scope.valuesAverage);
       });
     $scope.options = {
       legend: {
