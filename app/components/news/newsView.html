@@ -1,1 +1,22 @@
-<p>News</p>
+<section class="news-section">
+  <article ng-repeat="data in [0,1,2,3,4,5] track by $index" class="news-article">
+    <div class="title">
+      <h5>Chain Store Age </h5>
+      <span>Feb, 22 2016</span>
+    </div>
+    <div class="description">
+      <p>Billabong taps NetSuite to power omnichanner strategy</p>
+    </div>
+    <div class="image-article">
+      <img ng-src="http://lorempixel.com/400/200/sports/2" alt="">
+    </div>
+    <div class="content">
+      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium aperiam debitis incidunt omnis, consequuntur magni aut natus saepe voluptatibus ex quos porro doloremque quia placeat reiciendis inventore, officiis mollitia illum.</p>
+    </div>
+    <div class="share-buttons">
+      <a class="not-active"> <i class="fa fa-briefcase"></i></a>
+      <a class="not-active"> <i class="fa fa-thumbs-up"></i>132</a>
+      <a class="not-active"> <i class="fa fa-share"></i></a>
+    </div>
+  </article>
+</section>

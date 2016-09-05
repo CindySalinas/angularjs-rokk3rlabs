@@ -24,8 +24,7 @@ angular.module('rokk3rlabsApp')
       })
       .state('app.news', {
           url: '/news',
-          templateUrl: './views/news/newsView.html'/*,
-          controller: "homeController"*/
+          templateUrl: './views/news/newsView.html'
       })
       .state('404', {
           url: '/404',
