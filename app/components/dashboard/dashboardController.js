@@ -1,16 +1,33 @@
 'use strict';
 
 angular.module('app.dashboard', [])
-  .controller("DashboardCtrl", ['$scope', '$timeout', function ($scope, $timeout) {
+  .controller("DashboardCtrl", ['$scope', '$timeout', '$http', function ($scope, $timeout, $http) {
 
-    $scope.labels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
-    $scope.series = ['Series A', 'Series B'];
+    //get data
+    $http.get('https://s3-us-west-2.amazonaws.com/cindysalinas/files/data.json')
+      .then(function(res){
 
-    $scope.data = [
-      [65, 59, 80, 81, 56, 55, 40],
-      [28, 48, 40, 19, 86, 27, 90]
-    ];
+        $scope.labels = [];
+        $scope.dataSpeed = [];
+        $scope.dataCount =[];
+        $scope.valuesAverage =[];
+        $scope.dataAverage = [];
+        $scope.values = [];
+        $scope.valuesCount = [];
+        $scope.seriesSpeed = ['Speed'];
+        $scope.seriesCount = ['Count'];
 
+        res.data.forEach(function(data){
+          $scope.labels.push(data.zoneId);
+          //values
+          $scope.values.push(data.data.speed);
+          $scope.valuesCount.push(data.data.count);
+          $scope.valuesAverage.push(data.data.speed/data.data.count);
+        });
+        $scope.dataSpeed.push($scope.values);
+        $scope.dataCount.push($scope.valuesCount);
+        $scope.dataAverage.push($scope.valuesAverage);
+      });
     $scope.options = {
       legend: {
         display: true
