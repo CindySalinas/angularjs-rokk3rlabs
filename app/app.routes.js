@@ -21,4 +21,8 @@ angular.module('rokk3rlabsApp')
           url: '/',
           templateUrl: './views/dashboard/dashboardView.html'
       })
+      .state('app.news', {
+          url: '/news',
+          templateUrl: './views/news/newsView.html'
+      })
 }]);
